@@ -7,6 +7,10 @@ import java.util.Map;
 
 public interface EmployeeService {
 
+    Employee maxSalary(String firstName, String lastName, int salary, int department);
+
+    Employee minSalary(String firstName, String lastName, int salary, int department);
+
     Employee add(String firstName, String lastName, int salary, int department);
 
     Employee remove(String firstName, String lastName, int salary, int department);
