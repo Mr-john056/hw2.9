@@ -2,16 +2,14 @@ package pro.sky.Streams.service;
 
 import org.springframework.stereotype.Service;
 import pro.sky.Streams.model.Employee;
-import pro.sky.Streams.runner.FillEmployees;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public abstract class DepartmentServiceImpl implements pro.sky.Streams.service.DepartmentService {
+public class DepartmentServiceImpl implements DepartmentService {
     private final EmployeeServiceImpl employeeServiceImpl;
 
 
@@ -26,18 +24,32 @@ public abstract class DepartmentServiceImpl implements pro.sky.Streams.service.D
                 .collect(Collectors.toList());
     }
 
-    public List<Employee> getMaxSalary(int dep) {
-        return employeeServiceImpl.maxSalary()
-                .stream()
-                .filter(employee -> employee.getDepartment() == dep)
-                .max(Comparator.comparing(Employee::getSalary));
+    public Map<String, Employee> employees;
+
+    public DepartmentServiceImpl(EmployeeServiceImpl employeeServiceImpl, Map<String, Employee> employeeMap) {
+        this.employeeServiceImpl = employeeServiceImpl;
+        this.employees = employees;
     }
 
-    public List<Employee> getMinSalary(int dep) {
-        return employeeServiceImpl.minSalary()
+    @Override
+    public Map<Integer, List<Employee>> getAll(int dep) {
+        return null;
+    }
+    @Override
+    public Employee getMaxSalary(int dep) {
+        return employeeServiceImpl.getEmployees().values()
                 .stream()
                 .filter(employee -> employee.getDepartment() == dep)
-                .min(Comparator.comparing(Employee::getSalary));
+                .max(Comparator.comparing(Employee::getSalary))
+                .orElseThrow(pro.sky.Streams.exception.EmployeeNotFoundException::new);
+    }
+    @Override
+    public Employee getMinSalary(int dep) {
+        return employeeServiceImpl.getEmployees().values()
+                .stream()
+                .filter(employee -> employee.getDepartment() == dep)
+                .min(Comparator.comparing(Employee::getSalary))
+                .orElseThrow(pro.sky.Streams.exception.EmployeeNotFoundException::new);
     }
 
     @Override
