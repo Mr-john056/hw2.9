@@ -26,11 +26,6 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     public Map<String, Employee> employees;
 
-    public DepartmentServiceImpl(EmployeeServiceImpl employeeServiceImpl, Map<String, Employee> employeeMap) {
-        this.employeeServiceImpl = employeeServiceImpl;
-        this.employees = employees;
-    }
-
     @Override
     public Map<Integer, List<Employee>> getAll(int dep) {
         return null;

@@ -19,7 +19,7 @@ public interface EmployeeService {
 
     Collection<Employee> findAll();
 
-    Collection<Object> maxSalary();
+    Collection<Employee> maxSalary();
 
-    Collection<Object> minSalary();
+    Collection<Employee> minSalary();
 }

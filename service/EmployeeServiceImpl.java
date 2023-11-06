@@ -27,6 +27,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employees;
     }
 
+    public EmployeeServiceImpl(Map<String, Employee> employees) {
+        this.employees = employees;
+    }
+
+    public EmployeeServiceImpl(List<Employee> employeeList) {
+        this.employeeList = employeeList;
+    }
+
     @Override
     public Employee maxSalary(String firstName, String lastName, int salary, int department) {
         return null;
@@ -72,12 +80,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Collection<Object> maxSalary() {
+    public Collection<Employee> maxSalary() {
         return null;
     }
 
     @Override
-    public Collection<Object> minSalary() {
+    public Collection<Employee> minSalary() {
         return null;
     }
 }
