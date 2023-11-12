@@ -1,4 +1,4 @@
-package pro.sky.Streams;
+package pro.sky.Lib;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,13 +1,12 @@
-package pro.sky.Streams.controller;
+package pro.sky.Lib.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pro.sky.Streams.model.Employee;
-import pro.sky.Streams.service.DepartmentService;
-import pro.sky.Streams.service.EmployeeService;
+import pro.sky.Lib.model.Employee;
+import pro.sky.Lib.service.EmployeeService;
 
 import java.util.Collection;
 

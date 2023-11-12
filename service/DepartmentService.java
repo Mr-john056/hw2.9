@@ -1,10 +1,9 @@
-package pro.sky.Streams.service;
+package pro.sky.Lib.service;
 
-import pro.sky.Streams.model.Employee;
+import pro.sky.Lib.model.Employee;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 public interface DepartmentService {
     public List<Employee> getAllByDepartment(int dep);

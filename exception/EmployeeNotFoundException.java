@@ -1,4 +1,4 @@
-package pro.sky.Streams.exception;
+package pro.sky.Lib.exception;
 
 
 import org.springframework.http.HttpStatus;

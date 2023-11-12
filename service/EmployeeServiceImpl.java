@@ -1,9 +1,9 @@
-package pro.sky.Streams.service;
+package pro.sky.Lib.service;
 
 import org.springframework.stereotype.Service;
-import pro.sky.Streams.exception.EmployeeAlreadyAddedException;
-import pro.sky.Streams.exception.EmployeeNotFoundException;
-import pro.sky.Streams.model.Employee;
+import pro.sky.Lib.exception.EmployeeAlreadyAddedException;
+import pro.sky.Lib.exception.EmployeeNotFoundException;
+import pro.sky.Lib.model.Employee;
 
 import java.util.*;
 
@@ -47,12 +47,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee add(String firstName, String lastName, int salary, int department) {
+       validateInput(firstName,lastName);
         Employee employee = new Employee(firstName, lastName, salary, department);
         if (employees.containsKey(employee.getFullName())) {
             throw new EmployeeAlreadyAddedException();
         }
         employees.put(employee.getFullName(), employee);
         return employee;
+    }
+
+    private void validateInput(String firstName, String lastName) {
     }
 
     @Override

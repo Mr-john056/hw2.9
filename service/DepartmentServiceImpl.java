@@ -1,7 +1,7 @@
-package pro.sky.Streams.service;
+package pro.sky.Lib.service;
 
 import org.springframework.stereotype.Service;
-import pro.sky.Streams.model.Employee;
+import pro.sky.Lib.model.Employee;
 
 import java.util.Comparator;
 import java.util.List;
@@ -36,7 +36,7 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .stream()
                 .filter(employee -> employee.getDepartment() == dep)
                 .max(Comparator.comparing(Employee::getSalary))
-                .orElseThrow(pro.sky.Streams.exception.EmployeeNotFoundException::new);
+                .orElseThrow(pro.sky.Lib.exception.EmployeeNotFoundException::new);
     }
     @Override
     public Employee getMinSalary(int dep) {
@@ -44,7 +44,7 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .stream()
                 .filter(employee -> employee.getDepartment() == dep)
                 .min(Comparator.comparing(Employee::getSalary))
-                .orElseThrow(pro.sky.Streams.exception.EmployeeNotFoundException::new);
+                .orElseThrow(pro.sky.Lib.exception.EmployeeNotFoundException::new);
     }
 
     @Override

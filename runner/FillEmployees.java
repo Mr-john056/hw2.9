@@ -1,9 +1,9 @@
-package pro.sky.Streams.runner;
+package pro.sky.Lib.runner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import pro.sky.Streams.service.EmployeeService;
+import pro.sky.Lib.service.EmployeeService;
 
 @Component
 public class FillEmployees implements CommandLineRunner {

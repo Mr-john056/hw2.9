@@ -1,9 +1,8 @@
-package pro.sky.Streams.service;
+package pro.sky.Lib.service;
 
-import pro.sky.Streams.model.Employee;
+import pro.sky.Lib.model.Employee;
 
 import java.util.Collection;
-import java.util.Map;
 
 public interface EmployeeService {
 

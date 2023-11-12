@@ -1,17 +1,12 @@
-package pro.sky.Streams.controller;
+package pro.sky.Lib.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pro.sky.Streams.model.Employee;
-import pro.sky.Streams.service.DepartmentService;
-import pro.sky.Streams.service.DepartmentServiceImpl;
-import pro.sky.Streams.service.EmployeeService;
-
-import java.util.List;
+import pro.sky.Lib.model.Employee;
+import pro.sky.Lib.service.DepartmentService;
 
 @RestController
 @RequestMapping("/dep")
